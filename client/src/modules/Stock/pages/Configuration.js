@@ -33,7 +33,7 @@ const StyledTabPanel = styled(TabPanelUnstyled)(() => ({}));
 function StockMethods () {
     return (
         <div>
-
+            <Typography>Methode de stock</Typography>
         </div>
     );
 }
