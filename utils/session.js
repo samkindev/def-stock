@@ -35,7 +35,8 @@ class UserSession {
 		const unauthMessage = "Aucune session utilisateur.";
 		// Recuperation du cookie
 		const sid = req.cookies;
-		// Verification de l'existance du cookie PHPSESSID
+		// Verification de l'existance du cookie 
+		// console.log(sid);
 		try {
 			if (sid.PHPSESSID) {
 				// Lecture de la session utilisateur dans la memoire cache Memcache
@@ -62,7 +63,7 @@ class UserSession {
 					} else if (data) {
 						const sd = phpUnserialize.unserializeSession(data);
 						req.session = sd;
-						console.log(sd);
+						// console.log(sd);
 						next();
 					} else {
 						console.log(err);

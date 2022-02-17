@@ -30,7 +30,7 @@ socketIOModule(server);
 
 // Ajout des fonctionnalités à l'application
 app.use(cors());
-app.use(helmet());
+// app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(morgan('dev'));
