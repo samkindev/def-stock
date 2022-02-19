@@ -30,16 +30,17 @@ socketIOModule(server);
 
 // Ajout des fonctionnalités à l'application
 app.use(cors());
-app.use(helmet());
+// app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(morgan('dev'));
 app.use(cookieParser());
+// Session
+app.use(session.readSession);
+app.use(session.getUserData);
 
 // React View
 app.use(express.static(path.join(__dirname, 'client/build')));
-app.use(session.readSession);
-app.use(session.getUserData);
 
 /** Routing */
 // Ajout des Middlewares pour les endpoints(Url)
