@@ -63,7 +63,7 @@ class UserSession {
 					} else if (data) {
 						const sd = phpUnserialize.unserializeSession(data);
 						req.session = sd;
-						// console.log(sd);
+						console.log(sd);
 						next();
 					} else {
 						console.log(err);
