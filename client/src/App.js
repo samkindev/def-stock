@@ -13,7 +13,7 @@ import Configuration from "./modules/Stock/pages/Configuration";
 
 export const FeedbackContext = createContext({});
 export const SocketContext = createContext();
-const socket = socketIOClient('http://127.0.0.1:8082');
+const socket = socketIOClient('http://localhost:8082');
 
 function App() {
 	const loading = useSelector(getreqState) === "loading";

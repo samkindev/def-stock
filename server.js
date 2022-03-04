@@ -38,6 +38,7 @@ app.use(cookieParser());
 
 // React View
 app.use(express.static(path.join(__dirname, 'client/build')));
+// Session
 app.use(session.readSession);
 app.use(session.getUserData);
 
