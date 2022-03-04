@@ -5,7 +5,6 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import { Box } from "@mui/material";
 
 export default function LargeDialog({
 	title,
@@ -16,7 +15,9 @@ export default function LargeDialog({
 	onDisagree,
 	open,
 	onClose,
-	color
+	color,
+	agreeBtnProps,
+	disagreeBtnProps
 }) {
 	return (
 		<div>
@@ -42,22 +43,24 @@ export default function LargeDialog({
 					},
 				}}
 			>
-				<DialogTitle id="alert-dialog-title">{title}</DialogTitle>
-				<DialogContent>
-					<DialogContentText id="alert-dialog-message">
-                        {message}
-					</DialogContentText>
-				</DialogContent>
-				<DialogActions>
-                    {disagreeBtnText &&
-                        <Button onClick={onDisagree}>{disagreeBtnText}</Button>
-                    }
-                    {agreeBtnText &&
-                        <Button onClick={onAgree} autoFocus>
-                            {agreeBtnText}
-                        </Button>
-                    }
-				</DialogActions>
+				<div style={{maxWidth: 440}}>
+					<DialogTitle id="alert-dialog-title">{title}</DialogTitle>
+					<DialogContent>
+						<DialogContentText id="alert-dialog-message">
+							{message}
+						</DialogContentText>
+					</DialogContent>
+					<DialogActions>
+						{agreeBtnText &&
+							<Button onClick={onAgree} autoFocus size="small" {...agreeBtnProps}>
+								{agreeBtnText}
+							</Button>
+						}
+						{disagreeBtnText &&
+							<Button onClick={onDisagree} size="small" {...disagreeBtnProps}>{disagreeBtnText}</Button>
+						}
+					</DialogActions>
+				</div>
 			</Dialog>
 		</div>
 	);

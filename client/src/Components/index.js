@@ -14,3 +14,4 @@ export {default as Feedback} from './Dialogs/Feedback';
 export {default as TauxDevise} from './Card/TauxDevise';
 export {default as CustomisedChekbox} from './Inputs/Checkbox';
 export {default as MonthYearPeaker} from './Inputs/MonthYear';
+export {default as Select} from './Inputs/Select';

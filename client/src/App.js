@@ -9,6 +9,7 @@ import { getUserData, getreqState, getAuth } from "./app/reducers/assujetti";
 import { useDispatch, useSelector } from "react-redux";
 import { Chargement } from "./Components";
 import { getLoginRedirectUrl } from "./utilities/helpers";
+import Configuration from "./modules/Stock/pages/Configuration";
 
 export const FeedbackContext = createContext({});
 export const SocketContext = createContext();
@@ -79,6 +80,7 @@ function App() {
 						<div>
 							<Topbar />
 							<Routes>
+								<Route path="/configurations" element={<Configuration />} />
 								<Route
 									path="/stock/*"
 									element={<NavigationStock />}
